@@ -35,18 +35,18 @@ class PruebaLoginBusqueda(unittest.TestCase):
         else:
             time.sleep(2.0)
             print("Elemento email --> OK!")
-        self.elem.send_keys("thiagoanalista@live.com") #Escrebimos el nombre de usuario
+        self.elem.send_keys("email") #Escrebimos el nombre de usuario
         
         time.sleep(1) #Esperamos un segundo
         self.elem = self.driver.find_element_by_id("pass") #Buscamos el campo para inserir el password
-        self.elem.send_keys("sara1princesa") #Escrebimos el password
+        self.elem.send_keys("pass") #Escrebimos el password
         self.elem.send_keys(Keys.RETURN)
         webdriver.ActionChains(self.driver).send_keys(Keys.ESCAPE).perform()
         time.sleep(2) #Esperamos un segundo
         print("Login 'OK'")
         time.sleep(5.0)
         self.elem = self.driver.find_element_by_name("q")
-        self.elem.send_keys("ludmylla rodrigues")
+        self.elem.send_keys("nombre a buscar")
         self.elem.send_keys(Keys.RETURN)
         print("Busqueda 'OK'")
         time.sleep(5.0)
